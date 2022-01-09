@@ -83,6 +83,10 @@ void Engine::update() {
 				// Game over
 				currentGameState = GameState::GAMEOVER;
 			}
+			else if (snake[0].getPosition().x < 0 || snake[0].getPosition().x >= resolution.x || snake[0].getPosition().y < 0 || snake[0].getPosition().y >= resolution.y) {
+				// Game over
+				currentGameState = GameState::GAMEOVER;
+			}
 		}
 
 		// Resetujemy czas ktory minal od poprzedniego ruchu
