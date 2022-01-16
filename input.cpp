@@ -21,7 +21,7 @@ void Engine::input() {
 				togglePause();
 			}
 
-			// nwa gra
+			// nowa gra
 			if (currentGameState == GameState::GAMEOVER) {
 				if (event.key.code == Keyboard::Enter) {
 					startTheGame();

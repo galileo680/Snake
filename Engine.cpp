@@ -21,6 +21,10 @@ void Engine::startTheGame() {
 	moveApple();
 	currentGameState = GameState::RUNNING;
 	lastGameState = currentGameState;
+
+	std::cout << "+++++++++NEW GAME+++++++++" << std::endl;
+	// std::cout << "Wynik gracza: " << wynik << endl;
+	 
 }
 
 // Tworzenie nowego snake na poczatku gry
@@ -81,7 +85,7 @@ void Engine::run() {
 			// Spradzamy czy gracz nie odpauzowal gry
 			input();
 
-			// Koniec gry (rysujemy plancze koncowa)
+			// Koniec gry (rysujemy plansze koncowa)
 			if (currentGameState == GameState::GAMEOVER) {
 				draw();
 			}

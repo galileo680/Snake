@@ -57,7 +57,7 @@ void Engine::update() {
 			break;
 		}
 
-		// aktualizujemy reszte
+		// aktualizujemy reszte ciala (petla for przesuwamy kazdy element(section) w odpowiednim kierunku)
 		for (int s = 1; s < snake.size(); s++) {
 			thisSectionPosition = snake[s].getPosition();
 			snake[s].setPosition(lastSectionPosition);
@@ -74,18 +74,35 @@ void Engine::update() {
 			sectionsToAdd += 4;
 			speed++;
 			moveApple();
+			score++;
 
 		}
 
 		// Badanie kolizji - Snake
 		for (int s = 1; s < snake.size(); s++) {
+			// Sprawdzenie czy snake nie "zjadl" samego siebie
 			if (snake[0].getShape().getGlobalBounds().intersects(snake[s].getShape().getGlobalBounds())) {
 				// Game over
 				currentGameState = GameState::GAMEOVER;
+
+				std::cout << "!!!GAME OVER!!!" << std::endl;
+				std::cout << "Player score: " << score << std::endl;
+				std::cout << std::endl;
+				std::cout << "Press ESC to leave the game" << std::endl;
+				std::cout << std::endl;
+				break;
 			}
+			// Sprawdzenie czy snake nie uderzyl w bariery okna
 			else if (snake[0].getPosition().x < 0 || snake[0].getPosition().x >= resolution.x || snake[0].getPosition().y < 0 || snake[0].getPosition().y >= resolution.y) {
 				// Game over
 				currentGameState = GameState::GAMEOVER;
+
+				std::cout << "!!!GAME OVER!!!" << std::endl;
+				std::cout << "Player score: " << score << std::endl;
+				std::cout << std::endl;
+				std::cout << "Press ESC to leave the game" << std::endl;
+				std::cout << std::endl;
+				break;
 			}
 		}
 

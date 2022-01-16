@@ -4,8 +4,11 @@
 #include "Apple.h"
 #include "SFML/Graphics.hpp"
 #include "SFML/Graphics/RectangleShape.hpp"
+
 #include <vector>
 #include <deque>
+
+#include <iostream>
 
 using namespace sf;
 using namespace std;
@@ -13,7 +16,7 @@ using namespace std;
 class Engine
 {
 private:
-	// Window
+	// Okno 
 	Vector2f resolution;
 	RenderWindow window;
 	const unsigned int FPS = 60;
@@ -24,7 +27,8 @@ private:
 	int snakeDirection;
 	deque<int> directionQueue;
 	int speed;
-	int sectionsToAdd; // jak dlugi jest snake
+	int score = 0;
+	int sectionsToAdd; // jak bardzo powiekszyc snake'a
 
 	Apple apple;
 
