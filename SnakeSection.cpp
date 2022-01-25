@@ -2,7 +2,10 @@
 
 SnakeSection::SnakeSection(Vector2f startPosition) {
 	section.setSize(Vector2f(20, 20));
-	section.setFillColor(Color::Green);
+	section.setFillColor(Color::Blue);
+	//
+	
+	//
 	section.setPosition(startPosition);
 	position = startPosition;
 }

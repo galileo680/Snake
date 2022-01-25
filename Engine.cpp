@@ -22,7 +22,18 @@ void Engine::startTheGame() {
 	currentGameState = GameState::RUNNING;
 	lastGameState = currentGameState;
 
-	std::cout << "+++++++++NEW GAME+++++++++" << std::endl;
+	std::cout << "    				 _______  _        _______  _     _______ " << std::endl
+		<< "    				(  ____ \( (    /|(  ___  )| \    /\(  ____ \ " << std::endl
+		<< "    				| (    \/|  \  ( || (   ) ||  \  / /| (    \/" << std::endl
+		<< "    				| (_____ |   \ | || (___) ||  (_/ / | (__    " << std::endl
+		<< "    				(_____  )| (\ \) ||  ___  ||   _ (  |  __)" << std::endl
+		<< "    				      ) || | \   || (   ) ||  ( \ \ | (      " << std::endl
+		<< "    				/\____) || )  \  || )   ( ||  /  \ \| (____/\ " << std::endl
+		<< "    				\_______)|/    )_)|/     \||_/    \/(_______/" << std::endl;
+	cout << std::endl;
+	cout << std::endl;
+	std::cout << "					+++++++++NEW GAME+++++++++" << std::endl;
+
 	// std::cout << "Wynik gracza: " << wynik << endl;
 	 
 }
