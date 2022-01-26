@@ -100,7 +100,7 @@ void Engine::run() {
 			// Spradzamy czy gracz nie odpauzowal gry
 			input();
 
-			// Koniec gry (rysujemy plansze koncowa)
+			// Koniec gry 
 			if (currentGameState == GameState::GAMEOVER) {
 				draw();
 			}

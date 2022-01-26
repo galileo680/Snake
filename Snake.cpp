@@ -5,6 +5,7 @@
 
 int main()
 {
+	// Stworzenie obiektu silnika
 	Engine engine;
 	engine.run();
 
