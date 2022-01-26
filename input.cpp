@@ -48,6 +48,7 @@ void Engine::input() {
 	}
 }
 
+// Dodajemy kierunek do kolejki kierunków
 void Engine::addDirection(int newDirection) {
 	if (directionQueue.empty()) {
 		directionQueue.emplace_back(newDirection);

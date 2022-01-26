@@ -3,6 +3,8 @@
 const sf::Time Engine::TimePerFrame = seconds(1.f / 60.f);
 
 Engine::Engine() {
+
+	// Tworzenie okna gry o wymiarach 800x600
 	resolution = Vector2f(800, 600);
 	window.create(VideoMode(resolution.x, resolution.y), "Snake Game", Style::Default);
 	window.setFramerateLimit(FPS);
@@ -12,6 +14,7 @@ Engine::Engine() {
 }
 
 void Engine::startTheGame() {
+	// Inicjalizacja podstawowych zmiennych
 	speed = 2;
 	snakeDirection = Direction::RIGHT;
 	timeSinceLastMove = Time::Zero;
@@ -45,7 +48,7 @@ void Engine::newSnake() {
 	snake.emplace_back(Vector2f(80, 100));
 	snake.emplace_back(Vector2f(60, 100));
 }
-
+// Zwikeszenie dlugosci snake'a po zjedzeniu jablka
 void Engine::addSnakeSection() {
 	Vector2f newSectionPosition = snake[snake.size() - 1].getPosition();
 	snake.emplace_back(newSectionPosition);
@@ -60,8 +63,8 @@ void Engine::moveApple() {
 	// Szukamy w petli while odpowiedniego miejsca na pojawienie sie jablka
 	do {
 		badLocation = false;
-		newAppleLocation.x = (float)(1 + rand() / ((RAND_MAX + 1u) / (int)appleResolution.x)) * 20;
-		newAppleLocation.y = (float)(1 + rand() / ((RAND_MAX + 1u) / (int)appleResolution.y)) * 20;
+		newAppleLocation.x = (float)(1 + rand() / ((RAND_MAX) / (int)appleResolution.x)) * 20;
+		newAppleLocation.y = (float)(1 + rand() / ((RAND_MAX) / (int)appleResolution.y)) * 20;
 
 		// sprawdzamy czy miejsca wybrane dla jablka nie pokrywa sie z cialem snake'a
 		for (auto& s : snake)
@@ -90,6 +93,7 @@ void Engine::run() {
 
 	// Game loop 
 	while (window.isOpen()) {
+
 		Time dt = clock.restart();
 
 		if (currentGameState == GameState::PAUSED || currentGameState == GameState::GAMEOVER) {
@@ -101,7 +105,7 @@ void Engine::run() {
 				draw();
 			}
 
-			sleep(milliseconds(2)); // peg the Cpu
+			
 			continue;
 		}
 
