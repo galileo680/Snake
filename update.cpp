@@ -101,11 +101,13 @@ void Engine::update() {
 				// Game over
 				currentGameState = GameState::GAMEOVER;
 
-				std::cout << "!!!GAME OVER!!!" << std::endl;
-				std::cout << "Player score: " << score << std::endl;
-				std::cout << std::endl;
-				std::cout << "Press ESC to leave the game" << std::endl;
-				std::cout << std::endl;
+				cout << "					++++++++++++++++++++++++++" << endl;
+				cout << endl;
+				cout << "					!!!GAME OVER!!!" << endl;
+				cout << "					Player score:" << score << endl;
+				cout << std::endl;
+				cout << "					Press ESC to leave the game" << endl;
+				cout << std::endl;
 				break;
 			}
 		}
